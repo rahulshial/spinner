@@ -1,7 +1,8 @@
-const spinChar = ['\r|    ', '\r/    ', '\r-    ', '\r\\    '];
+const spinChar = ['\r|    ', '\r/    ', '\r-    ', '\r\\    ', '\r|    ', '\r/    ', '\r-    ', '\r\\    ', '\r|    '];
 console.log('');
+
 const timeOutLoop = function() {
-  console.log('\n');
+  console.log('');
 };
 
 for (let i = 0; i <= spinChar.length; i++) {
@@ -12,22 +13,3 @@ for (let i = 0; i <= spinChar.length; i++) {
     }
   },i * 500);
 }
-
-
-
-// setTimeout(() => {
-//   process.stdout.write('\r|   ');
-// }, 100);
-
-// setTimeout(() => {
-//   process.stdout.write('\r/   ');
-// }, 300);
-
-// setTimeout(() => {
-//   process.stdout.write('\r-   ');
-// }, 500);
-
-// setTimeout(() => {
-//   // Need to escape the backslash since it's a special character.
-//   process.stdout.write('\r\\   ');
-// }, 700);
