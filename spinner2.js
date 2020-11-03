@@ -1,15 +1,11 @@
 const spinChar = ['\r|    ', '\r/    ', '\r-    ', '\r\\    ', '\r|    ', '\r/    ', '\r-    ', '\r\\    ', '\r|    '];
-console.log('');
 
-const timeOutLoop = function() {
-  console.log('');
-};
-
-for (let i = 0; i <= spinChar.length; i++) {
-  setTimeout(() => {
-    process.stdout.write(spinChar[i]);
-    if (i >= spinChar.length) {
-      timeOutLoop();
-    }
-  },i * 500);
-}
+let numTimes = 0;
+const interval = setInterval(() => {
+  numTimes++;
+  process.stdout.write(spinChar[numTimes]);
+  if (numTimes === spinChar.length - 1) {
+    process.stdout.write("\n");
+    return clearInterval(interval);
+  }
+}, 250);
